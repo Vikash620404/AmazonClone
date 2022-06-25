@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
@@ -10,23 +11,22 @@ class CustomTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      controller: controller,
-      decoration: InputDecoration(
-        hintText:hintText ,
-        border: const OutlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.black38
+    return TextFormField(
+        controller: controller,
+        decoration: InputDecoration(
+          hintText: hintText,
+          border: const OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.black38),
+          ),
+          enabledBorder: const OutlineInputBorder(
+            borderSide: BorderSide(color: Colors.black38),
           ),
         ),
-
-        enabledBorder: const OutlineInputBorder(
-          borderSide: BorderSide(
-            color: Colors.black38
-          ),
-        ),
-      ),
-    // validator: (val){},
- );
+        validator: (val)  {
+          if (val == null || val.isEmpty) {
+            return 'Enter your $hintText';
+          }
+          return null;
+        });
   }
 }
