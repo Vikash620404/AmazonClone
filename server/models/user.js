@@ -24,7 +24,7 @@ validate:{
         trim:true,
         validator:(value)=>{
             
-            return value.length>6;
+            return value.length > 6;
         },
         message:'Please enter a long password',
 

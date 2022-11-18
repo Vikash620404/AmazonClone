@@ -159,7 +159,13 @@ class _AuthScreenState extends State<AuthScreen> {
                       const SizedBox(
                         height: 10,
                       ),
-                      CustomButton(text: 'SingIn', onTap: () {}),
+                      CustomButton(
+                          text: 'SingIn',
+                          onTap: () {
+                            if (_singInFormKey.currentState!.validate()) {
+                              singUpUser();
+                            }
+                          }),
                     ],
                   ),
                 ),

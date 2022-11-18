@@ -2,7 +2,7 @@
   const User = require('../models/USER');
    const bcryptjs=require('bcryptjs');
  const authRouter=express.Router();
-  authRouter.post('/api/singup',async (req,res)=>{
+  authRouter.post("/api/singup",async (req,res)=>{
     try{
         const{name,email,password}=req.body;
 
